@@ -53,14 +53,13 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 function canWeDeliver(zipCode) {
-    for (i = 0; i < deliveryAreaZipCodes.length; i++){
-        if (zipCode === deliveryAreaZipCodes[i]){
+        if (deliveryAreaZipCodes.includes(zipCode)){
             return "You're in our delivery zone!"
         } else {
             return "Sorry, we can't deliver to that address"
         }
     }
-    }
+    
 
 
 /* 
@@ -81,7 +80,13 @@ function canWeDeliver(zipCode) {
 */
 
 // CODE HERE
-
+function canWeDeliverTwo(zipCode){
+    for (let i=0;i<deliveryAreaZipCodes.length;i++)
+    if (deliveryAreaZipCodes[i] === zipCode){
+        return "You're in our delivery zone!"
+    }
+    return "You're not in our delivery zone"
+}
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -117,7 +122,7 @@ const deals = [
 */
 
 //CODE HERE
-
+deals[0].title=deals[0].title.replace('15','10')
 
 
 /*
@@ -134,3 +139,4 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc=deals[1].desc.replace('March','April').trim()

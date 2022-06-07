@@ -26,7 +26,7 @@ class Employee{
         this.shifts=shifts
     }
     getSchedule(){
-        return `${this.name} works on ${this.shifts}`
+        console.log(`${this.name} works on ${this.shifts}`)
     }
 }
 
@@ -42,17 +42,15 @@ class Employee{
 */
 
 //CODE HERE
-let empOne= {
-    name: 'Jess',
-    shifts:'weekday mornings, weekday afternoons'
-}
+const empOne= newEmploye ('Jess ,weekday mornings, weekday afternoons')
+
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-getSchedule(empOne)
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -67,7 +65,7 @@ getSchedule(empOne)
 */
 
 //CODE HERE
-let empTwo= {
+const empTwo= {
     ...empOne
 }
 
@@ -105,7 +103,7 @@ class Manager extends Employee {
         return `${this.name} manages ${this.employees}`
     }
     addEmployee(emp){
-        emp='Jason'
+        this.employees.push(emp)
     }
 }
 
@@ -122,10 +120,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-let newBoss={
-    name: 'Winston',
-    shifts: 'weekday mornings,weekday afternoons'
-}
+let newBoss=( 'Winston,weekday mornings,weekday afternoons,[Cece and Schimdt]')
 /*
     Call the `getEmployees` method on the
     `manager` object.  

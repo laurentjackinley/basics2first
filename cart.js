@@ -33,11 +33,10 @@ const cart = [
 ]
 
 //CODE HERE
-function newSum(num1,num2) {
-    return num1+num2
+function callbackFunction(prevValue,currentValue){
+    return prevValue + currentValue.price
 }
-console.log(newSum())
-
+const summedPrice = cart.reduce(callbackFunction,0)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -55,8 +54,8 @@ console.log(newSum())
 
 //CODE HERE
 function calcFinalPrice(cartTotal,couponValue,tax){
-    if (cartTotal === tax - 1)
-    return cartTotal - couponValue
+    let total= cartTotal+(tax*cartTotal)-couponValue
+    return total
 }
 
 
@@ -82,7 +81,10 @@ function calcFinalPrice(cartTotal,couponValue,tax){
 
 /*
     TEXT ANSWER HERE
-
+    name: string
+    billingAddress: string
+    accountBalance:number
+    rewardMember:boolean
 */
 
 /*
@@ -91,3 +93,8 @@ function calcFinalPrice(cartTotal,couponValue,tax){
 */
 
 //CODE HERE
+cust= {
+    name: 'Jack',
+    bilingAddress: '37 elmont',
+    
+}

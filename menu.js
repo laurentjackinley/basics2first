@@ -32,12 +32,12 @@
 
 //CODE HERE
 const pizza ={
-    name : 'food',
+    name : 'Cheese Pizza',
     price : 15,
     category : 'entree',
     popularity : 10,
     rating : 4,
-    tags: 'kids,gluten-free'
+    tags: ['kids','gluten-free','family']
 };
 
 
@@ -50,7 +50,8 @@ const pizza ={
 */
 
 //CODE HERE
-console.log(pizza.popularity)
+let pizzaPop=pizza.popularity
+console.log(pizzaPop)
 
 /*
     Second, log the second tag in your pizza's
@@ -60,7 +61,8 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
-console.log(pizza.tags)
+let secondPizzatag=pizza.tags[i]
+console.log(secondPizzatag)
 
 /*
     Third, destructure the price off of the
@@ -71,7 +73,6 @@ console.log(pizza.tags)
 
 //CODE HERE
 let {price} = pizza
-price = 25
 console.log(price)
 
 
@@ -98,14 +99,48 @@ console.log(category)
 */
 
 //CODE HERE
-let foodArr = [ {
-    'name' : 'food',
-    'price' : 19,
-    'category' : 'entree',
-    'popularity' : 8,
-    'rating' : 3,
-    'tags': 'high sodium, non gluten-free'
-} ]
+let foodArr = [ 
+    {
+    name : 'Chicken Pizza',
+    price : 12,
+    category : 'entree',
+    popularity : 8,
+    rating : 3,
+    tags: 'high sodium, non gluten-free'
+    },
+    {
+        name : 'fish',
+        price : 20,
+        category : 'entree',
+        popularity : 10,
+        rating : 5,
+        tags: ['kids','gluten-free','family']
+    },
+    {
+        name : 'Steak',
+        price : 35,
+        category : 'entree',
+        popularity : 20,
+        rating : 5,
+        tags: ['kids','gluten-free','family']
+    },
+    {
+        name : 'Pot Roast',
+        price : 15,
+        category : 'entree',
+        popularity : 10,
+        rating : 4,
+        tags: ['kids','gluten-free','family']
+    },
+    {
+        name : 'Macaroni',
+        price : 15,
+        category : 'entree',
+        popularity : 10,
+        rating : 4,
+        tags: ['kids','gluten-free','family']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -121,13 +156,10 @@ let foodArr = [ {
 */
 
 //CODE HERE
-const specificFood = (tags,callback) => {
-    arr.forEach(pizza,foodArr)
-    if (pizza.tags === tags)
-    callback()
+const callback = (element) => {
+    return element.tags.includes('high sodium')
 }
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter(callback)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -170,13 +202,22 @@ const specificFood = (tags,callback) => {
 */
 
 //CODE HERE
-
-
+const filterByProperty=function(property,number,type){
+    const filterArr=foodArr.filter((element)=>{
+        if (type==='above'){
+            return element[property]> number
+        } else if (type==='below'){
+            return element[property]< number
+        }
+    })
+    return filterArr()
+}
 /*
-    Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+Invoke the `filterByProperty` function passing
+in a value for each paramter.
 
-    You'll have to console.log to see the filtered array
+You'll have to console.log to see the filtered array
 */
 
 //CODE HERE
+console.log(filterByProperty('price',15,'above'))
